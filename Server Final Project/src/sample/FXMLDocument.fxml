@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="aPane" onKeyPressed="#keyPressed" prefHeight="600" prefWidth="600" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ServerGUIController" >
+    <children>
+        <ImageView fx:id="imgWholeScreen" fitHeight="600" fitWidth="600" pickOnBounds="true">
+            <Image url="@../resources/background2.png"/>
+        </ImageView>
+        <Pane fx:id="paneGame" prefHeight="600" prefWidth="600" visible="false" >
+            <children>
+                <Label fx:id="lblMessages" layoutX="33.0" layoutY="532.0" onKeyPressed="#keyPressed" prefHeight="10.0" prefWidth="300.0" textFill="#f2f0ce" >
+                    <font>
+                        <Font name="Candara Bold" size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="sendTextField" layoutX="30" layoutY="530.0" prefHeight="10.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" visible="false" onKeyPressed="#sendByEnter" >
+                    <font>
+                        <Font name="Candara Bold" size="11.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="btnSendMsg" layoutX="30" layoutY="505.0" mnemonicParsing="false" onAction="#handleBtnSend" prefHeight="10.0" prefWidth="120.0" style="-fx-text-fill: white; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" text="Type Message" >
+                    <font>
+                        <Font name="Candara Bold" size="11.0" />
+                    </font></Button>
+
+                <GridPane fx:id="gPaneBase" layoutX="24.0" layoutY="10.0" />
+                <StackPane fx:id="sPaneScreen" layoutX="24.0" layoutY="10.0" mouseTransparent="true" />
+                <GridPane fx:id="gPaneMap" layoutX="115.0" layoutY="10.0" visible="false"/>
+
+                <GridPane fx:id="gPaneInvButton" layoutX="510.0" layoutY="50.0" />
+                <ImageView fx:id="imgInv" fitHeight="100.0" layoutX="490.0" layoutY="10.0" pickOnBounds="true" mouseTransparent="true">
+                    <Image url="@../resources/background3.png"/>
+                </ImageView>
+                <GridPane fx:id="gPaneInvBorder" layoutX="510.0" layoutY="50.0" mouseTransparent="true" />
+                <GridPane fx:id="gPaneInv" layoutX="517.75" layoutY="57.75" mouseTransparent="true" />
+                <GridPane fx:id="gPaneLblInv" layoutX="533.0" layoutY="64.0" mouseTransparent="true" />
+                <Label fx:id="lblInv" layoutX="510.0" layoutY="10.0" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="100.0" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="19.0" />
+                    </font>
+            </Label>
+
+                <GridPane fx:id="gPaneHealth" layoutX="30.0" layoutY="475.0" />
+
+        </children></Pane>
+
+
+
+      <Pane fx:id="paneStart" prefHeight="600" prefWidth="600">
+         <children>
+             <TextField fx:id="portTextField" layoutX="14.0" layoutY="530.0" onKeyPressed="#keyPressed" prefHeight="39.0" prefWidth="89.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: a29a75; -fx-border-width: 2;" text="2015">
+               <font>
+                  <Font name="Candara Bold" size="20.0" />
+               </font>
+            </TextField>
+             <Label layoutX="14.0" layoutY="495.0" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="70.0" text="Port" textFill="#f2f0ce">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font></Label>
+
+             <Button fx:id="connectButton" layoutX="161.5" layoutY="228.0" mnemonicParsing="false" onAction="#handleConnectButton" prefHeight="155.0" prefWidth="277.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: a29a75; -fx-border-width: 5;" text="Connect">
+                 <font>
+                     <Font name="Candara Bold" size="54.0" />
+                 </font></Button>
+             <Button fx:id="btnRdy" layoutX="161.5" layoutY="228.0" mnemonicParsing="false" onAction="#handleBtnRdy" prefHeight="155.0" prefWidth="277.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: a29a75; -fx-border-width: 5;" text="Ready" visible="false">
+                 <font>
+                     <Font name="Candara Bold" size="54.0" />
+                 </font></Button>
+         </children></Pane>
+
+        <Button fx:id="btnPlayAgain" layoutX="161.5" layoutY="228.0" mnemonicParsing="false" onAction="#handleBtnPlayAgain" prefHeight="155.0" prefWidth="320.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: a29a75; -fx-border-width: 5;" text="Play Again" visible="false">
+            <font>
+                <Font name="Candara Bold" size="40.0" />
+            </font></Button>
+
+
+        <Pane fx:id="paneShop" prefHeight="600" prefWidth="600" visible="false">
+            <children>
+                <GridPane fx:id="gPaneBtnShopItems" layoutX="34.0" layoutY="40.0" />
+                <GridPane fx:id="gPaneBtnShopUpgrades" layoutX="34.0" layoutY="204.5" />
+
+                <ImageView fitHeight="300.0" fitWidth="300" pickOnBounds="true" mouseTransparent="true">
+                    <Image url="@../resources/background3.png"/>
+                </ImageView>
+
+                <Label layoutX="14.0" layoutY="5.0" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="100.0" text="Shop" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="19.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="14.0" layoutY="162.5" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="100.0" text="Upgrades" textFill="#f2f0ce" mouseTransparent="true">
+                    <font>
+                        <Font name="Candara Bold" size="19.0" />
+                    </font>
+                </Label>
+
+                <GridPane fx:id="gPaneShopItems" layoutX="34.0" layoutY="40.0" mouseTransparent="true"/>
+                <GridPane fx:id="gPaneShopUpgrades" layoutX="34.0" layoutY="165.0" mouseTransparent="true"/>
+
+            </children></Pane>
+
+        <Pane fx:id="paneShop2" prefHeight="600" prefWidth="600" visible="false">
+            <children>
+                <ImageView fitHeight="300.0" fitWidth="300" pickOnBounds="true">
+                    <Image url="@../resources/background3.png"/>
+                </ImageView>
+
+                <ImageView fx:id="imgShopItem" fitHeight=" 120.0" fitWidth="120" layoutX="18.0" layoutY="45.0" pickOnBounds="true" />
+
+                <Label fx:id="lblShop2" layoutX="18.0" layoutY="9.0" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="300.0" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="21.0" />
+                    </font></Label>
+
+                <Button fx:id="btnBack" layoutX="230" layoutY="15.0" mnemonicParsing="false" onAction="#handleBtnBack" prefHeight="10.0" prefWidth="55.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" text="Back">
+                    <font>
+                        <Font name="Candara Bold" size="14.0" />
+                    </font></Button>
+
+                <Button layoutX="163.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleBtnPurchase" prefHeight="10.0" prefWidth="98.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" text="Purchase">
+                    <font>
+                        <Font name="Candara Bold" size="17.0" />
+                    </font></Button>
+
+                <Label fx:id="lblDefinitions" layoutX="23.0" layoutY="165.0" onKeyPressed="#keyPressed" prefHeight="130.0" prefWidth="264.0" textFill="#f2f0ce" wrapText="true">
+                    <font>
+                        <Font name="Candara Bold" size="14.0" />
+                    </font></Label>
+
+            </children></Pane>
+
+        <Pane fx:id="paneItemShop" prefHeight="100" prefWidth="100" visible="false">
+            <children>
+
+                <Button fx:id="btnUp" layoutX="163.0" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnUp" prefHeight="22.0" prefWidth="25.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;">
+                    <font>
+                        <Font name="Candara Bold" size="10.0" />
+                    </font></Button>
+                <Label layoutX="169.0"  mouseTransparent="true" onKeyPressed="#keyPressed" prefHeight="10.0" prefWidth="10.0" text="+" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="25.0" />
+                    </font></Label>
+
+                <Button fx:id="btnDown" layoutX="163.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnDown" prefHeight="22.0" prefWidth="25.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;">
+                    <font>
+                        <Font name="Candara Bold" size="19.0" />
+                    </font></Button>
+                <Label layoutX="172.0" layoutY="23.0" mouseTransparent="true" onKeyPressed="#keyPressed" prefHeight="10.0" prefWidth="10.0" text="-" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="25.0" />
+                    </font></Label>
+
+                <TextField fx:id="txtShop" alignment="BOTTOM_RIGHT" layoutX="190" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="70.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" text="1">
+                    <font>
+                        <Font name="Candara Bold" size="20.0" />
+                    </font>
+                </TextField>
+                <Button layoutX="163.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleBtnPurchase" prefHeight="10.0" prefWidth="98.0" style="-fx-text-fill: #f2f0ce; -fx-border-color: #807a61; -fx-background-color: bdb48a; -fx-border-width: 2;" text="Purchase">
+                    <font>
+                        <Font name="Candara Bold" size="17.0" />
+                    </font></Button>
+            </children></Pane>
+
+        <Label fx:id="lblPrice" onKeyPressed="#keyPressed" prefHeight="30.0" prefWidth="300.0" textFill="#f2f0ce" visible="false">
+            <font>
+                <Font name="Candara Bold" size="15.0" />
+            </font></Label>
+
+        <Pane fx:id="paneChest" prefHeight="600" prefWidth="600" visible="false" >
+            <children>
+                <GridPane fx:id="gPaneChestBtn" layoutX="24.0" layoutY="40.0"  />
+
+                <ImageView fitHeight="300.0" fitWidth="300" pickOnBounds="true" mouseTransparent="true">
+                    <Image url="@../resources/background3.png"/>
+                </ImageView>
+
+                <Label layoutX="14.0" layoutY="5.0" onKeyPressed="#keyPressed" prefHeight="35.0" prefWidth="100.0" text="Chest" textFill="#f2f0ce">
+                    <font>
+                        <Font name="Candara Bold" size="19.0" />
+                    </font>
+                </Label>
+
+                <GridPane fx:id="gPaneChestBorder" layoutX="24.0" layoutY="40.0" mouseTransparent="true" />
+                <GridPane fx:id="gPaneChest" layoutX="31.75" layoutY="47.75" mouseTransparent="true" />
+                <GridPane fx:id="gPaneChestLbl" layoutX="47.0" layoutY="54.0" mouseTransparent="true" />
+
+            </children></Pane>
+
+        <ImageView fx:id="imgMoving" mouseTransparent="true" />
+        <Label fx:id="lblMoving" mouseTransparent="true" />
+
+
+    </children>
+</AnchorPane>
